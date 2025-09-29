@@ -1,0 +1,607 @@
+/*
+===============================================
+NINJATECHHQ - ADVANCED THEME SYSTEM
+Green, Blue & Black Professional Theme
+===============================================
+*/
+
+/* ===============================================
+   ROOT VARIABLES - Ninja Color Palette
+=============================================== */
+:root {
+    /* Main Theme Colors */
+    --ninja-green: #32cd32;
+    --ninja-lime: #32cd32;
+    --ninja-blue: #3b82f6;
+    --ninja-black: #000000;
+    --ninja-dark-bg: #0a0a0a;
+    --ninja-dark-surface: #1a1a1a;
+    --ninja-dark-card: #2a2a2a;
+    
+    /* Gradient Combinations */
+    --ninja-gradient-primary: linear-gradient(135deg, var(--ninja-green), var(--ninja-blue));
+    --ninja-gradient-dark: linear-gradient(135deg, var(--ninja-dark-bg), var(--ninja-dark-surface));
+    --ninja-gradient-glow: linear-gradient(135deg, 
+        rgba(50, 205, 50, 0.1), 
+        rgba(59, 130, 246, 0.1), 
+        rgba(0, 0, 0, 0.9));
+    
+    /* Shadow System */
+    --ninja-shadow-sm: 0 2px 8px rgba(50, 205, 50, 0.2);
+    --ninja-shadow-md: 0 4px 20px rgba(50, 205, 50, 0.3), 0 2px 10px rgba(59, 130, 246, 0.2);
+    --ninja-shadow-lg: 0 8px 40px rgba(50, 205, 50, 0.4), 0 4px 20px rgba(59, 130, 246, 0.3);
+    --ninja-shadow-glow: 0 0 30px rgba(50, 205, 50, 0.6), 0 0 60px rgba(59, 130, 246, 0.4);
+    
+    /* Animation Timing */
+    --ninja-transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --ninja-transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --ninja-transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===============================================
+   OVERRIDE SYSTEM - Force Lime Green Theme
+=============================================== */
+/* Override any remaining orange colors */
+* {
+    --ninja-override-orange: #32cd32 !important;
+}
+
+/* Force all orange hex colors to lime green */
+[style*="#D2691E"], [style*="rgb(210, 105, 30)"], [style*="rgba(210, 105, 30"], 
+[style*="#eb8406"], [style*="rgb(235, 132, 6)"], [style*="rgba(235, 132, 6"] {
+    color: #32cd32 !important;
+    background-color: #32cd32 !important;
+    border-color: #32cd32 !important;
+    box-shadow: 0 0 20px rgba(50, 205, 50, 0.6) !important;
+}
+
+/* Override service icons specifically */
+.fa-wifi, .fa-television, .fa-laptop, .fa-code, .fa-server, .fa-home, .fa-shield, .fa-play-circle {
+    color: #32cd32 !important;
+}
+
+/* Global Dropdown Menu Fix - Ninja Dark Theme */
+.navbar-nav .dropdown-menu {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.95)) !important;
+    border: 2px solid var(--ninja-green) !important;
+    border-radius: 12px !important;
+    box-shadow: var(--ninja-shadow-lg) !important;
+    backdrop-filter: blur(20px) !important;
+    z-index: 9999 !important;
+    min-width: 200px !important;
+    padding: 10px 0 !important;
+    margin-top: 5px !important;
+}
+
+.navbar-nav .dropdown-menu a {
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: var(--ninja-transition-fast) !important;
+    padding: 12px 20px !important;
+    border-radius: 8px !important;
+    margin: 2px 8px !important;
+    border-bottom: 1px solid rgba(50, 205, 50, 0.2) !important;
+}
+
+.navbar-nav .dropdown-menu a:last-child {
+    border-bottom: none !important;
+}
+
+.navbar-nav .dropdown-menu a:hover {
+    background: var(--ninja-gradient-primary) !important;
+    color: white !important;
+    transform: translateX(5px) !important;
+    box-shadow: 0 4px 15px rgba(50, 205, 50, 0.4) !important;
+}
+
+/* Override any white backgrounds */
+.dropdown-menu {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.95)) !important;
+}
+
+/* Ensure headings use lime green */
+h1, h2, h3, h4, h5, h6 {
+    color: #32cd32 !important;
+}
+
+/* Ninja Badge Component */
+.ninja-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 4px 6px 4px 0;
+    background: linear-gradient(135deg, rgba(50, 205, 50, 0.2), rgba(59, 130, 246, 0.2));
+    border: 1px solid rgba(50, 205, 50, 0.4);
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--ninja-transition-fast);
+}
+
+.ninja-badge:hover {
+    background: linear-gradient(135deg, rgba(50, 205, 50, 0.4), rgba(59, 130, 246, 0.4));
+    border-color: var(--ninja-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(50, 205, 50, 0.3);
+}
+
+/* ===============================================
+   BACKGROUND SYSTEM - Animated Ninja Background
+=============================================== */
+body {
+    background: var(--ninja-dark-bg);
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(50, 205, 50, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(50, 205, 50, 0.05) 0%, transparent 50%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Animated Background Particles */
+.ninja-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.ninja-particles::before,
+.ninja-particles::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--ninja-green);
+    border-radius: 50%;
+    animation: float-particles 20s infinite linear;
+}
+
+.ninja-particles::before {
+    left: 10%;
+    animation-delay: 0s;
+    box-shadow: 
+        200px 300px 0 rgba(50, 205, 50, 0.3),
+        400px 150px 0 rgba(59, 130, 246, 0.3),
+        600px 400px 0 rgba(50, 205, 50, 0.2),
+        800px 250px 0 rgba(59, 130, 246, 0.2),
+        1000px 350px 0 rgba(50, 205, 50, 0.3);
+}
+
+.ninja-particles::after {
+    right: 10%;
+    animation-delay: -10s;
+    background: var(--ninja-blue);
+    box-shadow: 
+        -200px 200px 0 rgba(59, 130, 246, 0.3),
+        -400px 350px 0 rgba(50, 205, 50, 0.3),
+        -600px 100px 0 rgba(59, 130, 246, 0.2),
+        -800px 300px 0 rgba(50, 205, 50, 0.2),
+        -1000px 200px 0 rgba(59, 130, 246, 0.3);
+}
+
+@keyframes float-particles {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-30px) rotate(120deg); }
+    66% { transform: translateY(30px) rotate(240deg); }
+}
+
+/* ===============================================
+   NAVIGATION SYSTEM - Glassmorphism Navbar
+=============================================== */
+.navbar {
+    background: rgba(10, 10, 10, 0.8) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(50, 205, 50, 0.2);
+    box-shadow: var(--ninja-shadow-md);
+    transition: var(--ninja-transition-normal);
+}
+
+.navbar-brand {
+    font-weight: 700 !important;
+    background: var(--ninja-gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(50, 205, 50, 0.5);
+    transition: var(--ninja-transition-normal);
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px rgba(50, 205, 50, 0.8));
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+    position: relative;
+    transition: var(--ninja-transition-normal);
+    margin: 0 8px;
+    padding: 8px 16px !important;
+    border-radius: 8px;
+}
+
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--ninja-gradient-primary);
+    transition: var(--ninja-transition-normal);
+    border-radius: 2px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--ninja-green) !important;
+    background: rgba(50, 205, 50, 0.1);
+    box-shadow: var(--ninja-shadow-sm);
+    border-radius: 8px;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--ninja-green) !important;
+    background: rgba(50, 205, 50, 0.15);
+    box-shadow: var(--ninja-shadow-sm);
+    border-radius: 8px;
+}
+
+/* Dropdown Menus */
+.dropdown-menu {
+    background: rgba(26, 26, 26, 0.95) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(50, 205, 50, 0.3) !important;
+    border-radius: 12px !important;
+    box-shadow: var(--ninja-shadow-lg) !important;
+    margin-top: 8px !important;
+}
+
+.dropdown-item {
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: var(--ninja-transition-fast);
+    border-radius: 8px;
+    margin: 4px 8px;
+    padding: 8px 16px !important;
+}
+
+.dropdown-item:hover {
+    background: var(--ninja-gradient-primary) !important;
+    color: white !important;
+    transform: translateX(5px);
+}
+
+/* ===============================================
+   BUTTON SYSTEM - Ninja Interactive Buttons
+=============================================== */
+.btn-ninja {
+    background: var(--ninja-gradient-primary);
+    border: 2px solid transparent;
+    color: white;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--ninja-transition-normal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--ninja-shadow-md);
+}
+
+.btn-ninja::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: var(--ninja-transition-slow);
+}
+
+.btn-ninja:hover::before {
+    left: 100%;
+}
+
+.btn-ninja:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ninja-shadow-glow);
+    border-color: rgba(16, 185, 129, 0.5);
+}
+
+.btn-ninja:active {
+    transform: translateY(0);
+}
+
+/* Button Variants */
+.btn-ninja-outline {
+    background: transparent;
+    border: 2px solid var(--ninja-green);
+    color: var(--ninja-green);
+}
+
+.btn-ninja-outline:hover {
+    background: var(--ninja-gradient-primary);
+    color: white;
+}
+
+/* ===============================================
+   CARD SYSTEM - Glassmorphism Cards
+=============================================== */
+.ninja-card {
+    background: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: var(--ninja-transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.ninja-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--ninja-gradient-primary);
+    transform: scaleX(0);
+    transition: var(--ninja-transition-normal);
+}
+
+.ninja-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--ninja-shadow-lg);
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+.ninja-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* 3D Flip Cards */
+.flip-card {
+    perspective: 1000px;
+    width: 100%;
+    height: 300px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.flip-card-front {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.flip-card-back {
+    background: var(--ninja-gradient-primary);
+    transform: rotateY(180deg);
+    color: white;
+}
+
+/* ===============================================
+   ANIMATION SYSTEM - Advanced Animations
+=============================================== */
+
+/* Scroll Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pulse Animation */
+.ninja-pulse {
+    animation: ninja-pulse 2s infinite;
+}
+
+@keyframes ninja-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+/* Loading Spinner */
+.ninja-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(16, 185, 129, 0.3);
+    border-top: 3px solid var(--ninja-green);
+    border-radius: 50%;
+    animation: ninja-spin 1s linear infinite;
+}
+
+@keyframes ninja-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Skill Bars */
+.skill-bar {
+    background: rgba(26, 26, 26, 0.5);
+    border-radius: 25px;
+    padding: 3px;
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress {
+    background: var(--ninja-gradient-primary);
+    height: 20px;
+    border-radius: 25px;
+    width: 0%;
+    transition: width 2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 30px 30px;
+    animation: move-stripes 1s linear infinite;
+}
+
+@keyframes move-stripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 30px 0;
+    }
+}
+
+/* ===============================================
+   TEXT EFFECTS - Advanced Typography
+=============================================== */
+.ninja-text-glow {
+    background: var(--ninja-gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+.ninja-text-shadow {
+    text-shadow: 
+        0 0 5px rgba(16, 185, 129, 0.5),
+        0 0 10px rgba(16, 185, 129, 0.4),
+        0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: 3px solid var(--ninja-green);
+    white-space: nowrap;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--ninja-green);
+    }
+}
+
+/* ===============================================
+   UTILITY CLASSES
+=============================================== */
+.ninja-bg-dark { background: var(--ninja-dark-surface) !important; }
+.ninja-bg-card { background: var(--ninja-dark-card) !important; }
+.ninja-text-green { color: var(--ninja-green) !important; }
+.ninja-text-blue { color: var(--ninja-blue) !important; }
+.ninja-border-green { border-color: var(--ninja-green) !important; }
+.ninja-shadow { box-shadow: var(--ninja-shadow-md) !important; }
+.ninja-shadow-glow { box-shadow: var(--ninja-shadow-glow) !important; }
+
+/* ===============================================
+   RESPONSIVE DESIGN
+=============================================== */
+@media (max-width: 768px) {
+    .ninja-card {
+        margin-bottom: 1rem;
+    }
+    
+    .flip-card {
+        height: 250px;
+    }
+    
+    .btn-ninja {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .ninja-card {
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+    
+    .flip-card {
+        height: 200px;
+    }
+    
+    .ninja-particles {
+        opacity: 0.3;
+    }
+}
