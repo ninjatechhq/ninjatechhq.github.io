@@ -1,0 +1,639 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        
+        <!-- 🎯 SEO Meta Tags -->
+        <title>Client References & Portfolio | Web Development Projects by NinjaTechHQ</title>
+        <meta name="description" content="View our portfolio of successful web development projects and client testimonials. NinjaTechHQ delivers professional websites, IT solutions, and custom development for businesses across Florida and Georgia.">
+        <meta name="keywords" content="web development portfolio, client references, website examples, NinjaTechHQ projects, professional web design, IT solutions portfolio, custom development, Florida web developer">
+        <meta name="author" content="NinjaTechHQ">
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- 🌐 Open Graph Meta Tags -->
+        <meta property="og:title" content="Client Portfolio & References - NinjaTechHQ">
+        <meta property="og:description" content="Professional web development portfolio showcasing successful projects and satisfied clients across Florida and Georgia.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://ninjatechhq.com/references.html">
+        <meta property="og:image" content="https://images2.imgbox.com/9c/f3/B3GkEq1A_o.png">
+        <meta property="og:site_name" content="NinjaTechHQ">
+        
+        <!-- 🔗 Canonical Link -->
+        <link rel="canonical" href="https://ninjatechhq.com/references.html">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://thumbs2.imgbox.com/96/0e/s0HOslRZ_t.jpg">
+        
+        <!-- 📊 Structured Data - Portfolio -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          "@id": "https://ninjatechhq.com/references.html",
+          "name": "NinjaTechHQ Client Portfolio",
+          "description": "Professional web development and IT solutions portfolio showcasing successful client projects",
+          "url": "https://ninjatechhq.com/references.html",
+          "creator": {
+            "@type": "Organization",
+            "name": "NinjaTechHQ",
+            "url": "https://ninjatechhq.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Nassau County",
+              "addressRegion": "FL",
+              "addressCountry": "US"
+            }
+          },
+          "mainEntity": [
+            {
+              "name": "Tom's Land Investment Academy",
+              "description": "Professional land investment education platform",
+              "url": "https://tomslandacademy.com"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://bscm.com",
+              "name": "BSCM Business Solutions",
+              "description": "Business consulting platform with strategic solutions",
+              "url": "https://bscm.com"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://spectrumtints.com",
+              "name": "Spectrum Tints",
+              "description": "Professional window tinting service platform",
+              "url": "https://spectrumtints.com"
+            }
+          ]
+        }
+        </script>
+        <!--Google fonts links-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+        <!--For Plugins external css-->
+        <link rel="stylesheet" href="assets/css/plugins.css" />
+        <link rel="stylesheet" href="assets/css/roboto-webfont.css" />
+
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!--Theme Responsive css-->
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+        
+        <!--🥷 NINJA THEME - Advanced CSS System -->
+        <link rel="stylesheet" href="assets/css/ninja-theme.css" />
+        
+        <!--📱 MOBILE & TABLET OPTIMIZATION -->
+        <link rel="stylesheet" href="assets/css/mobile-responsive.css" />
+
+        <style>
+        /* Portfolio Grid Layout Fix */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* Portfolio Card Styling */
+        .portfolio-card {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(40, 40, 40, 0.9));
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(50, 205, 50, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
+                        0 0 20px rgba(50, 205, 50, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Responsive Grid Adjustments */
+        @media (max-width: 1200px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #32cd32, #3b82f6, #c6159a, #dc3545);
+            border-radius: 22px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-card:hover::before {
+            opacity: 0.7;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                        0 0 40px rgba(50, 205, 50, 0.4);
+            border-color: rgba(50, 205, 50, 0.8);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid rgba(50, 205, 50, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover .portfolio-image {
+            border-color: rgba(50, 205, 50, 0.8);
+            transform: scale(1.05);
+        }
+
+        .portfolio-title {
+            color: #ffffff;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .portfolio-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .portfolio-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(50, 205, 50, 0.2);
+            color: #32cd32;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(50, 205, 50, 0.3);
+        }
+
+        .portfolio-links {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .portfolio-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-btn {
+            background: linear-gradient(45deg, #32cd32, #28a745);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 15px rgba(50, 205, 50, 0.3);
+        }
+
+        .portfolio-btn:hover {
+            background: linear-gradient(45deg, #28a745, #32cd32);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(50, 205, 50, 0.5);
+            color: white;
+            text-decoration: none;
+        }
+
+        .portfolio-btn.secondary {
+            background: transparent;
+            border: 2px solid #32cd32;
+            color: #32cd32;
+        }
+
+        .portfolio-btn.secondary:hover {
+            background: rgba(50, 205, 50, 0.1);
+            color: #32cd32;
+        }
+
+        /* Testimonial Styling */
+        .testimonial-card {
+            background: rgba(50, 205, 50, 0.1);
+            border-left: 4px solid #32cd32;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .testimonial-text {
+            color: #ffffff;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            color: #32cd32;
+            font-weight: 600;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(40, 40, 40, 0.8));
+            padding: 60px 0;
+            margin: 40px 0;
+            border-radius: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            color: #32cd32;
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(50, 205, 50, 0.5);
+        }
+
+        .stat-label {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        </style>
+
+        <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Social Section -->
+        <section id="social" class="social">
+            <div class="container">
+                <div class="row">
+                    <div class="social-wrapper">
+                        <div class="col-md-6">
+                            <div class="social-icon">
+                                <a href="krammerdev.online"><i class="fa fa-globe"></i></a>
+                                <a href="https://x.com/ninjatechhq?s=21"><i class="fa fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/ninjatech5g/?igsh=MWp2djl1Z3RxdHY5aQ%3D%3D#"><i class="fa fa-instagram"></i></a>
+                                <a href="mailto:ninjatech5g@gmail.com"><i class="fa fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="social-contact">
+                                <a href="tel:+19045570052"><i class="fa fa-phone"></i>+1 904 557 0052</a>
+                                <a href="mailto:ninjatech5g@gmail.com"><i class="fa fa-envelope"></i>Ninjatech5g@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+        </section>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html" style="font-weight: bold; color: #333; font-size: 24px;">🥷 NinjaTechHQ</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="pricing.html">PRICE</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li class="active"><a href="references.html">References</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- References Header -->
+        <section id="references-header" class="sections ninja-bg-dark" style="padding: 100px 0 60px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="head_title text-center animate-on-scroll">
+                        <h1 class="ninja-text-glow">Client References & Portfolio</h1>
+                        <p class="ninja-text-shadow" style="color: rgba(255,255,255,0.8); font-size: 18px; margin-top: 20px;">Showcasing successful projects and satisfied clients across platforms</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <div class="stat-number">20+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support Available</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <div class="stat-number">5★</div>
+                            <div class="stat-label">Average Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="sections ninja-bg-dark" style="padding: 80px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="head_title text-center animate-on-scroll" style="margin-bottom: 60px;">
+                        <h2 class="ninja-text-glow">Featured Client Projects</h2>
+                        <p class="ninja-text-shadow" style="color: rgba(255,255,255,0.7);">Professional websites and IT solutions that drive business growth</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-grid">
+                    <!-- Tom's Land Investment Academy -->
+                    <div class="portfolio-card">
+                        <img src="https://images2.imgbox.com/9c/f3/B3GkEq1A_o.png" alt="Land Moved by Faith Academy" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Land Moved by Faith Academy</h3>
+                            <p class="portfolio-description">Comprehensive educational platform for land investment strategies. Features professional course management, student portals, and payment processing integration.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Responsive Design</span>
+                                <span class="tech-tag">SEO Optimized</span>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">"NinjaTechHQ transformed our vision into a professional, user-friendly platform that perfectly serves our future students. Outstanding work!"</p>
+                                <div class="testimonial-author">- Thomas West, Land Moved By Faith</div>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-btn">View Live Site</a>
+                                <a href="#" class="portfolio-btn secondary">Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HydroHogs Power Washing -->
+                    <div class="portfolio-card">
+                        <img src="https://thumbs2.imgbox.com/a6/7e/nlymym0E_t.png" alt="HydroHogs Pressure Washing" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">HydroHogs Pressure Washing</h3>
+                            <p class="portfolio-description">Local service business website featuring stunning visuals, online booking, service packages, and customer testimonials. Mobile-optimized for local search visibility.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Mobile-First</span>
+                                <span class="tech-tag">Local SEO</span>
+                                <span class="tech-tag">Online Booking</span>
+                                <span class="tech-tag">Payment Gateway</span>
+                                <span class="tech-tag">Contact Forms</span>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">"Our online bookings increased after launching the new website and business cards Ninjatech has provided. The mobile design is perfect for our customers!"</p>
+                                <div class="testimonial-author">- Shawn, HydroHogs - Veteran - Owner/Operator</div>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-btn">View Live Site</a>
+                                <a href="#" class="portfolio-btn secondary">Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drivechain Dynamics -->
+                    <div class="portfolio-card">
+                        <img src="https://i.imgur.com/uo4C39Z.png" alt="Drivechain Dynamics" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Drivechain Dynamics</h3>
+                            <p class="portfolio-description">E-commerce platform for motorized bike conversions with interactive pricing calculator and comprehensive product showcase.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">E-commerce</span>
+                                <span class="tech-tag">Price Calculator</span>
+                                <span class="tech-tag">Product Catalog</span>
+                                <span class="tech-tag">Custom JavaScript</span>
+                                <span class="tech-tag">Bootstrap</span>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">"The interactive pricing calculator is a game-changer for our business. Customers love being able to see costs upfront!"</p>
+                                <div class="testimonial-author">- Sarah, Drivechain Dynamics</div>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-btn">View Live Site</a>
+                                <a href="#" class="portfolio-btn secondary">Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Haul Off Your Junk -->
+                    <div class="portfolio-card">
+                        <img src="https://thumbs2.imgbox.com/23/eb/qAvyspQI_t.png" alt="Haul Off Your Junk" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Haul Off Your Junk</h3>
+                            <p class="portfolio-description">Professional junk removal service website with online booking, transparent pricing, and eco-friendly disposal options for residential and commercial clients.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Online Booking</span>
+                                <span class="tech-tag">Transparent Pricing</span>
+                                <span class="tech-tag">Service Scheduling</span>
+                                <span class="tech-tag">Mobile Optimized</span>
+                                <span class="tech-tag">Local SEO</span>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">"Outstanding service and professional website that perfectly represents our commitment to clean, reliable junk removal!"</p>
+                                <div class="testimonial-author">- Haul Off Your Junk Team</div>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="https://hauloffyourjunk.com/" class="portfolio-btn">View Live Site</a>
+                                <a href="#" class="portfolio-btn secondary">Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BSCM Business Solutions -->
+                    <div class="portfolio-card">
+                        <img src="https://thumbs2.imgbox.com/cb/f3/BcZ6kTSj_t.png" alt="BSCM Business Solutions" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">BSCM Business Solutions</h3>
+                            <p class="portfolio-description">Comprehensive business consulting platform offering strategic solutions, market analysis, and growth strategies for modern enterprises.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Business Consulting</span>
+                                <span class="tech-tag">Analytics Dashboard</span>
+                                <span class="tech-tag">Client Portal</span>
+                                <span class="tech-tag">Data Visualization</span>
+                                <span class="tech-tag">Enterprise Solutions</span>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">"BSCM transformed our business strategy with data-driven insights. Our growth accelerated significantly!"</p>
+                                <div class="testimonial-author">- Executive Client</div>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="https://bscm.com" class="portfolio-btn">View Live Site</a>
+                                <a href="#" class="portfolio-btn secondary">Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spectrum Tints -->
+                    <div class="portfolio-card">
+                        <img src="https://images.squarespace-cdn.com/content/v1/688cc0c891f82310c3dc0d7e/c1317bbc-7003-435a-9bcd-3f02b261d73b/sendtoh.png?format=1500w" alt="Spectrum Tints Window Tinting" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Spectrum Tints</h3>
+                            <p class="portfolio-description">Professional window tinting service platform featuring online scheduling, tint options gallery, and customer quote system for automotive and residential services.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Service Booking</span>
+                                <span class="tech-tag">Gallery System</span>
+                                <span class="tech-tag">Quote Calculator</span>
+                                <span class="tech-tag">Mobile Optimized</span>
+                                <span class="tech-tag">Local SEO</span>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">"Our window tinting business doubled after the new website. Customers love the online booking system!"</p>
+                                <div class="testimonial-author">- Spectrum Tints Owner</div>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="https://spectrumtints.com" class="portfolio-btn">View Live Site</a>
+                                <a href="#" class="portfolio-btn secondary">Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Showcase -->
+                <div class="row" style="margin-top: 60px;">
+                    <div class="head_title text-center animate-on-scroll">
+                        <h2 class="ninja-text-glow">Our Development Process</h2>
+                        <p class="ninja-text-shadow" style="color: rgba(255,255,255,0.7); margin-bottom: 40px;">How we deliver exceptional results for every client</p>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 text-center">
+                        <div class="portfolio-card" style="min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
+                            <i class="fa fa-lightbulb-o ninja-text-green" style="font-size: 60px; margin-bottom: 20px;"></i>
+                            <h4 style="color: #ffffff; margin-bottom: 15px;">1. Discovery</h4>
+                            <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">Understanding your business goals and technical requirements</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 text-center">
+                        <div class="portfolio-card" style="min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
+                            <i class="fa fa-pencil ninja-text-green" style="font-size: 60px; margin-bottom: 20px;"></i>
+                            <h4 style="color: #ffffff; margin-bottom: 15px;">2. Design</h4>
+                            <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">Creating wireframes and mockups tailored to your brand</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 text-center">
+                        <div class="portfolio-card" style="min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
+                            <i class="fa fa-code ninja-text-green" style="font-size: 60px; margin-bottom: 20px;"></i>
+                            <h4 style="color: #ffffff; margin-bottom: 15px;">3. Development</h4>
+                            <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">Building responsive, SEO-optimized websites with clean code</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 text-center">
+                        <div class="portfolio-card" style="min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
+                            <i class="fa fa-rocket ninja-text-green" style="font-size: 60px; margin-bottom: 20px;"></i>
+                            <h4 style="color: #ffffff; margin-bottom: 15px;">4. Launch</h4>
+                            <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">Deployment, testing, and ongoing support for optimal performance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Footer-->
+        <footer id="footer" class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-wrapper">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="footer-brand">
+                                <img src="https://thumbs2.imgbox.com/01/99/3pPGvKzC_t.png" alt="logo" style="max-width: 100%; height: auto; max-height: 120px;" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="copyright">
+                                <p>© 2019 Ninja Tech. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="scrollup">
+            <a href="#"><i class="fa fa-chevron-up"></i></a>
+        </div>
+
+        <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/modernizr.js"></script>
+        <script src="assets/js/main.js"></script>
+        
+        <!-- NINJA EFFECTS - Advanced JavaScript System -->
+        <script src="assets/js/ninja-effects.js"></script>
+    </body>
+</html>
