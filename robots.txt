@@ -1,0 +1,51 @@
+# NinjaTechHQ Robots.txt
+# Professional IT Services & Web Development
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://ninjatechhq.com/sitemap.xml
+
+# Main Pages
+Allow: /index.html
+Allow: /services.html
+Allow: /blog.html
+Allow: /pricing.html
+Allow: /contact.html
+Allow: /business.html
+
+# Service Pages
+Allow: /it.html
+Allow: /internet.html
+Allow: /tv.html
+Allow: /webdev.html
+
+# Assets
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Block unnecessary crawling
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /.htaccess
+Disallow: /error/
+Disallow: /logs/
+
+# Crawl Delay (be respectful)
+Crawl-delay: 1
+
+# Popular Search Engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
