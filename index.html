@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1a0000">
+    
+    <title>NinjaTechHQ - Professional IT Support & Web Development | Nassau County FL</title>
+    <meta name="description" content="Expert IT support, custom web development, and tech solutions in Nassau County, Florida. Web design, app development, IT services, DirecTV help, and AT&T internet setup. 24/7 support, competitive pricing, proven results.">
+    <meta name="keywords" content="IT support Nassau County, web development Florida, computer repair, network setup, DirecTV installation, AT&T internet, app development, social media marketing, tech support Florida">
+    <meta name="author" content="Jacob Krammer - NinjaTechHQ">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://www.ninjatechhq.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ninjatechhq.com/">
+    <meta property="og:title" content="NinjaTechHQ - Professional IT Support & Web Development">
+    <meta property="og:description" content="Expert IT support, custom web development, and tech solutions in Nassau County, Florida. 24/7 support, competitive pricing, proven results.">
+    <meta property="og:image" content="https://www.ninjatechhq.com/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="NinjaTechHQ">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.ninjatechhq.com/">
+    <meta name="twitter:title" content="NinjaTechHQ - Professional IT Support & Web Development">
+    <meta name="twitter:description" content="Expert IT support, custom web development, and tech solutions in Nassau County, Florida.">
+    <meta name="twitter:image" content="https://www.ninjatechhq.com/twitter-image.jpg">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="US-FL">
+    <meta name="geo.placename" content="Nassau County">
+    <meta name="geo.position" content="30.6708;-81.6620">
+    <meta name="ICBM" content="30.6708, -81.6620">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Mobile & Tablet Responsive CSS -->
+    <link rel="stylesheet" href="mobile-responsive.css">
+    
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* RipPoke Purple Theme Colors */
+            --primary-color: #ff0000;
+            --secondary-color: #cc0000;
+            --accent-color: #ff6b6b;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --bg-light: rgba(0, 0, 0, 0.3);
+            --bg-white: rgba(0, 0, 0, 0.5);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #ffcccc;
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 50%, #000000 100%);
+            background-attachment: fixed;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 102, 102, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.05) 0%, transparent 50%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== ANNOUNCEMENT BAR ===== */
+        .announcement-bar {
+            background: linear-gradient(135deg, #1a0000 70%, #ff0000 30%);
+            color: #ffcccc;
+            padding: 12px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(26, 0, 0, 0.4);
+            min-height: 48px;
+        }
+
+        .announcement-slider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            height: 24px;
+            overflow: hidden;
+        }
+
+        .announcement-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            position: absolute;
+            width: 100%;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.6s ease-in-out;
+        }
+
+        .announcement-item.active {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+
+        .announcement-item i {
+            font-size: 16px;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(180deg, #1a1a1a 0%, #1a0000 50%, #660000 100%);
+            border-bottom: none;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            gap: 20px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ff6666;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 12px 0;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 12px;
+            color: #ffcccc;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ff3333;
+            background: rgba(255, 0, 0, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.98);
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 12px 20px;
+            color: #ffcccc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown a:hover {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff3333;
+            padding-left: 25px;
+        }
+
+        .dropdown a i {
+            margin-right: 10px;
+            color: #ff0000;
+        }
+
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #ff6666;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid rgba(255, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: rgba(255, 0, 0, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 99998;
+            overflow-y: auto;
+            padding: 80px 20px 20px;
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+
+        .mobile-nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav-menu li {
+            margin-bottom: 10px;
+        }
+
+        .mobile-nav-menu a {
+            display: block;
+            padding: 15px 20px;
+            color: #ffcccc;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            background: linear-gradient(135deg, rgba(26, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 2px solid rgba(255, 0, 0, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-menu a:hover,
+        .mobile-nav-menu a.active {
+            background: rgba(255, 0, 0, 0.2);
+            border-color: #ff0000;
+            color: #ff3333;
+        }
+
+        .mobile-nav-menu a i {
+            margin-right: 10px;
+            color: #ff0000;
+        }
+
+        .mobile-services-header {
+            padding: 15px 20px;
+            color: #ff6666;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Accordion Styles */
+        .mobile-accordion {
+            margin-bottom: 10px;
+        }
+
+        .mobile-accordion-btn {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            color: #ffcccc;
+            background: linear-gradient(135deg, rgba(26, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 2px solid rgba(255, 0, 0, 0.3);
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-accordion-btn:hover {
+            background: rgba(255, 0, 0, 0.2);
+            border-color: #ff0000;
+            color: #ff3333;
+        }
+
+        .mobile-accordion-btn.active {
+            background: rgba(255, 0, 0, 0.2);
+            border-color: #ff0000;
+            color: #ff3333;
+        }
+
+        .mobile-accordion-btn span i {
+            margin-right: 10px;
+            color: #ff0000;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+            color: #ff0000;
+            font-size: 14px;
+        }
+
+        .mobile-accordion-btn.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .mobile-accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .mobile-accordion-content.active {
+            max-height: 500px;
+        }
+
+        .mobile-accordion-content a {
+            display: block;
+            padding: 12px 20px 12px 40px;
+            color: #ffb3b3;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            background: rgba(0, 0, 0, 0.5);
+            border-left: 3px solid rgba(255, 0, 0, 0.3);
+            margin-bottom: 5px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-accordion-content a:hover {
+            background: rgba(255, 0, 0, 0.15);
+            border-left-color: #ff0000;
+            color: #ff6666;
+            padding-left: 45px;
+        }
+
+        .mobile-accordion-content a i {
+            margin-right: 10px;
+            color: #ff0000;
+            font-size: 14px;
+        }
+
+        @media (max-width: 1024px) {
+            .mobile-menu-btn {
+                display: flex;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background: rgba(255, 0, 0, 0.9);
+                border: 2px solid #ff0000;
+                border-radius: 8px;
+                z-index: 99999;
+                cursor: pointer;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+                box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+            }
+
+            .mobile-menu-btn span {
+                width: 20px;
+                height: 2px;
+                background: #ffcccc;
+                display: block;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .header-center {
+                display: none;
+            }
+
+            .header-right {
+                display: none;
+            }
+        }
+
+        /* ===== HERO SLIDESHOW ===== */
+        .hero-slideshow {
+            padding: 20px 0 40px 0;
+            background: linear-gradient(180deg, rgba(26, 26, 26, 0.8) 0%, rgba(26, 0, 0, 0.6) 100%);
+        }
+
+        .slideshow-container {
+            position: relative;
+            height: 65vh;
+            min-height: 500px;
+            max-height: 650px;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: visible;
+        }
+
+        .slide {
+            display: none;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        .slide-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 80px;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .slide-left {
+            flex: 1;
+            position: relative;
+            max-width: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+        }
+
+        .service-cards {
+            position: relative;
+            width: 550px;
+            height: 400px;
+            overflow: visible;
+        }
+
+        .card-image {
+            position: absolute;
+            width: 240px;
+            height: 320px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card-1 {
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(-20deg);
+            z-index: 1;
+        }
+
+        .card-2 {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(0deg) scale(1.2);
+            z-index: 3;
+        }
+
+        .card-2.card-image {
+            object-position: center center;
+            object-fit: cover;
+        }
+
+        .card-3 {
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(20deg);
+            z-index: 2;
+        }
+
+        .slide-right {
+            flex: 1;
+            text-align: left;
+            max-width: 550px;
+        }
+
+        .slide-right h2 {
+            font-size: 1.2rem;
+            color: #ff0000;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .slide-right h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ff3333;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-right p {
+            font-size: 1.2rem;
+            color: #ffb3b3;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #ff0000;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .promo-code {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            padding: 2px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: #000000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.5);
+        }
+
+        /* Slide Navigation - HIDDEN */
+        .slide-navigation {
+            display: none;
+        }
+
+        .nav-dot {
+            display: none;
+        }
+
+        .slide-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 0, 0, 0.4);
+            border: 2px solid rgba(255, 0, 0, 0.7);
+            color: #ffcccc;
+            padding: 10px 14px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide-control:hover {
+            background: rgba(255, 0, 0, 0.8);
+            border-color: #ff0000;
+            transform: translateY(-50%) scale(1.15);
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+        }
+
+        .slide-control.prev {
+            left: -60px;
+        }
+
+        .slide-control.next {
+            right: -60px;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a0000 50%, #000000 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ff4444;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card-link {
+            text-decoration: none;
+            display: block;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0000 100%);
+            border: 3px solid transparent;
+            border-radius: 15px;
+            padding: 50px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff0000, #cc0000);
+            transition: height 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: #ff0000;
+            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: #ff0000;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: #ff3333;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+            transition: all 0.3s ease;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-card:hover h3 {
+            color: #ff0000;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+            border-top: 1px solid rgba(255, 0, 0, 0.2);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #ff0000;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cc9999;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff0000;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff6666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn i {
+            font-size: 18px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 8px;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 0, 0, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 0, 0, 0.2);
+            color: #996666;
+        }
+
+        /* ===== TABLET RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            /* Fix slideshow cutoff at top - add padding for sticky header */
+            .hero-slideshow {
+                padding-top: 80px;
+                margin-top: 0;
+            }
+
+            .slideshow-container {
+                height: auto;
+                min-height: 400px;
+                margin: 0 10px;
+            }
+
+            .slide-content {
+                flex-direction: column;
+                padding: 20px 10px;
+                gap: 20px;
+            }
+
+            .slide-right h1 {
+                font-size: 2rem;
+            }
+
+            .slide-right h2 {
+                font-size: 1rem;
+            }
+
+            .slide-right p {
+                font-size: 1rem;
+            }
+
+            .service-cards {
+                width: 280px;
+                height: 240px;
+            }
+
+            .card-image {
+                width: 140px;
+                height: 190px;
+            }
+            
+            .card-2 {
+                transform: translate(-50%, -50%) rotate(0deg) scale(1.15);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Smaller, less intrusive arrows on mobile */
+            .slide-control {
+                padding: 8px;
+                font-size: 16px;
+                background: rgba(255, 0, 0, 0.7);
+                border: 2px solid #ff0000;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+                width: 36px;
+                height: 36px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .slide-control.prev {
+                left: 5px;
+            }
+            
+            .slide-control.next {
+                right: 5px;
+            }
+        }
+    </style>
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "NinjaTechHQ",
+        "image": "https://www.ninjatechhq.com/logo.png",
+        "@id": "https://www.ninjatechhq.com",
+        "url": "https://www.ninjatechhq.com",
+        "telephone": "+1-904-XXX-XXXX",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "",
+            "addressLocality": "Nassau County",
+            "addressRegion": "FL",
+            "postalCode": "32034",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 30.6708,
+            "longitude": -81.6620
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+        },
+        "sameAs": [
+            "https://www.facebook.com/ninjatechhq",
+            "https://www.twitter.com/ninjatechhq",
+            "https://www.instagram.com/ninjatechhq",
+            "https://www.linkedin.com/company/ninjatechhq"
+        ],
+        "description": "Professional IT support, web development, and tech solutions in Nassau County, Florida. Specializing in web design, app development, IT services, DirecTV installation, and AT&T internet setup.",
+        "founder": {
+            "@type": "Person",
+            "name": "Jacob Krammer"
+        },
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": 30.6708,
+                "longitude": -81.6620
+            },
+            "geoRadius": "50000"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Technology Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Web Development",
+                        "description": "Custom website design and development services"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "App Development",
+                        "description": "Mobile application design and development"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "IT Support",
+                        "description": "Professional IT support and system management"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Internet Services",
+                        "description": "AT&T Fiber internet installation and setup"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "TV Services",
+                        "description": "DirecTV installation and technical support"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Social Media Marketing",
+                        "description": "Professional social media management and marketing"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-slider">
+            <div class="announcement-item active">
+                <i class="fas fa-code"></i>
+                🎯 Professional Web Development & IT Solutions!
+            </div>
+            <div class="announcement-item">
+                <i class="fas fa-headset"></i>
+                🚀 Social Media Management!
+            </div>
+            <div class="announcement-item">
+                <i class="fas fa-star"></i>
+                ⭐ Cheap Hosting with DDOS Protection!
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container container">
+            <!-- Left Side - Logo -->
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <h1>🥷 NinjaTechHQ</h1>
+                </a>
+            </div>
+
+            <!-- Center - Navigation Menu -->
+            <div class="header-center">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">Services ▼</a>
+                        <div class="dropdown">
+                            <a href="appdesign.html"><i class="fas fa-mobile-alt"></i> App Design</a>
+                            <a href="internet.html"><i class="fas fa-wifi"></i> ATT Internet</a>
+                            <a href="tv.html"><i class="fas fa-tv"></i> DTV Help</a>
+                            <a href="itservices.html"><i class="fas fa-server"></i> IT Services</a>
+                            <a href="socialmedia.html"><i class="fas fa-hashtag"></i> Social Media</a>
+                            <a href="webdev.html"><i class="fas fa-laptop-code"></i> Web Design</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Side - Contact Button -->
+            <div class="header-right">
+                <div class="header-actions">
+                    <a href="contact.html" class="contact-btn">
+                        <i class="fas fa-envelope"></i> Get Quote
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+            
+            <!-- Services Accordion -->
+            <li class="mobile-accordion">
+                <button class="mobile-accordion-btn" id="servicesAccordion">
+                    <span><i class="fas fa-th"></i> Services</span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </button>
+                <div class="mobile-accordion-content" id="servicesAccordionContent">
+                    <a href="services.html"><i class="fas fa-th"></i> All Services</a>
+                    <a href="appdesign.html"><i class="fas fa-mobile-alt"></i> App Design</a>
+                    <a href="internet.html"><i class="fas fa-wifi"></i> ATT Internet</a>
+                    <a href="tv.html"><i class="fas fa-tv"></i> DTV Help</a>
+                    <a href="itservices.html"><i class="fas fa-server"></i> IT Services</a>
+                    <a href="socialmedia.html"><i class="fas fa-hashtag"></i> Social Media</a>
+                    <a href="webdev.html"><i class="fas fa-laptop-code"></i> Web Design</a>
+                </div>
+            </li>
+            
+            <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact / Get Quote</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Slideshow -->
+        <section class="hero-slideshow">
+            <div class="slideshow-container">
+                <!-- Slide 1: Web Development -->
+                <div class="slide active">
+                    <div class="slide-content">
+                        <div class="slide-left">
+                            <div class="service-cards">
+                                <img src="https://images2.imgbox.com/e2/52/yA72STIb_o.png" alt="Web Development" class="card-image card-1">
+                                <img src="https://rawcdn.githack.com/ninjatechhq/ninjatechhq.github.io/d691ff701a112d209f5a14e8d84c4055d9d1d94a/digiatal.png" alt="Custom Websites" class="card-image card-2">
+                                <img src="https://images2.imgbox.com/c2/dc/hZqOhlnF_o.png" alt="Responsive Design" class="card-image card-3">
+                            </div>
+                        </div>
+                        <div class="slide-right">
+                            <h2>PROFESSIONAL</h2>
+                            <h1>WEB DEVELOPMENT</h1>
+                            <p>Transform your <span class="highlight">DIGITAL PRESENCE</span></p>
+                            <p class="promo-text">Custom websites built by <span class="promo-code">Jacob</span></p>
+                            <a href="Services/webdev.html" class="cta-button">Web Services</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: IT Support -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-left">
+                            <div class="service-cards">
+                                <img src="https://rawcdn.githack.com/ninjatechhq/ninjatechhq.github.io/321691803d356e5b061ba7443b0d5d0e1f248748/testtv.png" alt="IT Support" class="card-image card-1">
+                                <img src="https://rawcdn.githack.com/ninjatechhq/ninjatechhq.github.io/6395bbaca92826ab0cf87c23f511642d53a46d9f/rsz_1865152858938151444.png" alt="Tech Solutions" class="card-image card-2">
+                                <img src="https://images2.imgbox.com/67/64/DvGt4u64_o.jpg" alt="Remote Support" class="card-image card-3">
+                            </div>
+                        </div>
+                        <div class="slide-right">
+                            <h2>EXPERT</h2>
+                            <h1>IT SUPPORT</h1>
+                            <p>Get <span class="highlight">24/7 ASSISTANCE</span></p>
+                            <p class="promo-text">Remote or on-site <span class="promo-code">SUPPORT</span></p>
+                            <a href="Services/it.html" class="cta-button">Get Support</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Social Media Marketing -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-left">
+                            <div class="service-cards">
+                                <img src="https://i.pinimg.com/originals/0d/5a/7a/0d5a7a920f011a34adf1ccea5046fb2c.gif" alt="Facebook Marketing" class="card-image card-1">
+                                <img src="https://www.big-red-digital.com/images/blogimages/social-media-networks.jpg" alt="TikTok Marketing" class="card-image card-2">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFZsMy18l4FDAT3jhf-quEA8iw-U0S8o26HQ&s" alt="Instagram Marketing" class="card-image card-3">
+                            </div>
+                        </div>
+                        <div class="slide-right">
+                            <h2>REAL</h2>
+                            <h1>SOCIAL MEDIA MARKETING</h1>
+                            <p>Grow your <span class="highlight">BUSINESS</span></p>
+                            <p class="promo-text">Expert management <span class="promo-code">24/7</span></p>
+                            <a href="contact.html" class="cta-button">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Dots -->
+                <div class="slide-navigation">
+                    <button class="nav-dot active" data-slide="0"></button>
+                    <button class="nav-dot" data-slide="1"></button>
+                    <button class="nav-dot" data-slide="2"></button>
+                </div>
+
+                <!-- Slide Controls -->
+                <button class="slide-control prev" onclick="changeSlide(-1)">&#8249;</button>
+                <button class="slide-control next" onclick="changeSlide(1)">&#8250;</button>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="container">
+                <div class="services-grid">
+                    <!-- App Development -->
+                    <a href="appdesign.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>App Design</h3>
+                        </div>
+                    </a>
+
+                    <!-- Internet Setup -->
+                    <a href="internet.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <h3>Internet Services</h3>
+                        </div>
+                    </a>
+
+                    <!-- DTV Help -->
+                    <a href="tv.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <h3>DTV Help</h3>
+                        </div>
+                    </a>
+
+                    <!-- IT Support -->
+                    <a href="itservices.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>IT Services</h3>
+                        </div>
+                    </a>
+
+                    <!-- Social Media Marketing -->
+                    <a href="socialmedia.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h3>Social Media</h3>
+                        </div>
+                    </a>
+
+                    <!-- Web Development -->
+                    <a href="webdev.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3>Web Design</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NinjaTechHQ</h3>
+                    <p>Professional IT support and web development services. Dedicated to providing quality solutions with personalized service.</p>
+                    <div class="social-links">
+                        <a href="https://x.com/NinjaTechHQ?s=21" class="social-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/ninjatech5g/" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:ninjatech5g@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="Services/webdev.html">Web Development</a>
+                    <a href="Services/it.html">IT Support</a>
+                    <a href="Services/internet.html">Internet & Networks</a>
+                    <a href="Services/tv.html">TV & Entertainment</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> +1 904 557 0052</p>
+                    <p><i class="fas fa-envelope"></i> ninjatech5g@gmail.com</p>
+                    <a href="contact.html">Get in Touch</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NinjaTechHQ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Announcement Bar Slider
+        let currentAnnouncement = 0;
+        const announcements = document.querySelectorAll('.announcement-item');
+        
+        function showNextAnnouncement() {
+            announcements[currentAnnouncement].classList.remove('active');
+            currentAnnouncement = (currentAnnouncement + 1) % announcements.length;
+            announcements[currentAnnouncement].classList.add('active');
+        }
+        
+        setInterval(showNextAnnouncement, 4000);
+
+        // Slideshow Functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.nav-dot');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            if (index >= slides.length) currentSlide = 0;
+            if (index < 0) currentSlide = slides.length - 1;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            showSlide(currentSlide);
+        }
+
+        // Auto-advance slides
+        setInterval(() => {
+            currentSlide++;
+            showSlide(currentSlide);
+        }, 6000);
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+        if (mobileMenuBtn && mobileMenuOverlay) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenuOverlay.classList.toggle('active');
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
+            });
+
+            // Close menu when clicking on a link
+            const mobileMenuLinks = mobileMenuOverlay.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Close menu when clicking outside
+            mobileMenuOverlay.addEventListener('click', function(e) {
+                if (e.target === mobileMenuOverlay) {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Mobile Accordion Functionality
+        const servicesAccordion = document.getElementById('servicesAccordion');
+        const servicesAccordionContent = document.getElementById('servicesAccordionContent');
+
+        if (servicesAccordion && servicesAccordionContent) {
+            servicesAccordion.addEventListener('click', function() {
+                servicesAccordion.classList.toggle('active');
+                servicesAccordionContent.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>
