@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Repair Services - iPhone, Android & More | NinjaTechHQ</title>
+    <meta name="description" content="Professional phone repair services for iPhone, Android, and other devices. Screen repairs, battery replacement, water damage, and more. Fast, reliable service in Nassau County, FL.">
+    <meta name="keywords" content="phone repair Nassau County, iPhone repair, Android repair, screen replacement, battery replacement, water damage repair, Samsung repair, Google Pixel repair, phone repair Florida">
+    <link rel="canonical" href="https://www.ninjatechhq.com/phonerepair.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ninjatechhq.com/phonerepair.html">
+    <meta property="og:title" content="Phone Repair Services - iPhone, Android & More | NinjaTechHQ">
+    <meta property="og:description" content="Expert phone repair for iPhone, Android, and all major brands. Screen replacement, battery service, water damage repair. Same day service available in Nassau County, FL.">
+    <meta property="og:image" content="https://www.ninjatechhq.com/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.ninjatechhq.com/phonerepair.html">
+    <meta name="twitter:title" content="Phone Repair Services - iPhone, Android & More | NinjaTechHQ">
+    <meta name="twitter:description" content="Expert phone repair for iPhone, Android, and all major brands. Screen replacement, battery service, water damage repair. Same day service available.">
+    <meta name="twitter:image" content="https://www.ninjatechhq.com/twitter-image.jpg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="black-red-theme.css">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 50%, #000000 100%);
+            color: #ffcccc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Announcement Bar */
+        .announcement-bar {
+            background: linear-gradient(135deg, #1a0000 70%, #ff0000 30%);
+            color: #ffcccc;
+            padding: 12px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(26, 0, 0, 0.4);
+            min-height: 48px;
+        }
+
+        .announcement-slider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            height: 24px;
+            overflow: hidden;
+        }
+
+        .announcement-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            position: absolute;
+            width: 100%;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.6s ease-in-out;
+        }
+
+        .announcement-item.active {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+
+        .announcement-item i {
+            font-size: 16px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(180deg, #1a1a1a 0%, #1a0000 50%, #660000 100%);
+            border-bottom: none;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            gap: 20px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ff6666;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 12px 0;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 12px;
+            color: #ffcccc;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ff3333;
+            background: rgba(255, 0, 0, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.98);
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 12px 20px;
+            color: #ffcccc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown a:hover {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff3333;
+            padding-left: 25px;
+        }
+
+        .dropdown a i {
+            margin-right: 10px;
+            color: #ff0000;
+        }
+
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #ff6666;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid rgba(255, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: rgba(255, 0, 0, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            .mobile-menu-btn {
+                display: flex;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background: rgba(255, 0, 0, 0.9);
+                border: 2px solid #ff0000;
+                border-radius: 8px;
+                z-index: 99999;
+                cursor: pointer;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+                box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+            }
+
+            .mobile-menu-btn span {
+                width: 20px;
+                height: 2px;
+                background: #ffcccc;
+                display: block;
+                transition: all 0.3s ease;
+            }
+
+            .header-center {
+                display: none;
+            }
+
+            .header-right {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(26, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #ff3333;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #ffb3b3;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .device-types {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .device-badge {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(204, 0, 0, 0.1));
+            border: 2px solid #ff0000;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ff6666;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .device-badge i {
+            font-size: 1.5rem;
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff4444;
+            margin-bottom: 50px;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0000 100%);
+            border: 3px solid rgba(255, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff0000;
+            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: #ff0000;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #cc9999;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .quote-text {
+            font-size: 1.2rem;
+            color: #ff0000;
+            font-weight: 700;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .quote-text i {
+            margin-right: 8px;
+        }
+
+        /* Brands Section */
+        .brands-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(26, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .brand-item {
+            background: rgba(255, 0, 0, 0.1);
+            border: 2px solid rgba(255, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            color: #ff6666;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .brand-item:hover {
+            background: rgba(255, 0, 0, 0.2);
+            border-color: #ff0000;
+            transform: scale(1.05);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: #000000;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+            border-top: 1px solid rgba(255, 0, 0, 0.2);
+            padding: 40px 0 20px;
+            text-align: center;
+            color: #996666;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .device-types {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-slider">
+            <div class="announcement-item active">
+                <i class="fas fa-code"></i>
+                🎯 Professional Web Development & IT Solutions!
+            </div>
+            <div class="announcement-item">
+                <i class="fas fa-headset"></i>
+                🚀 Social Media Management!
+            </div>
+            <div class="announcement-item">
+                <i class="fas fa-mobile-screen"></i>
+                📱 iPhone & Android Repair Services Now Available!
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container container">
+            <!-- Left Side - Logo -->
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <h1>🥷 NinjaTechHQ</h1>
+                </a>
+            </div>
+
+            <!-- Center - Navigation Menu -->
+            <div class="header-center">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">Services ▼</a>
+                        <div class="dropdown">
+                            <a href="appdesign.html"><i class="fas fa-mobile-alt"></i> App Design</a>
+                            <a href="internet.html"><i class="fas fa-wifi"></i> ATT Internet</a>
+                            <a href="tv.html"><i class="fas fa-tv"></i> DTV Help</a>
+                            <a href="itservices.html"><i class="fas fa-server"></i> IT Services</a>
+                            <a href="phonerepair.html"><i class="fas fa-mobile-screen"></i> Phone Repair</a>
+                            <a href="socialmedia.html"><i class="fas fa-hashtag"></i> Social Media</a>
+                            <a href="webdev.html"><i class="fas fa-laptop-code"></i> Web Design</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Side - Contact Button -->
+            <div class="header-right">
+                <div class="header-actions">
+                    <a href="contact.html" class="contact-btn">
+                        <i class="fas fa-envelope"></i> Get Quote
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Repair Services</h2>
+            
+            <div class="services-grid">
+                <!-- Screen Repair -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-screen-button"></i>
+                    </div>
+                    <h3>Screen Replacement</h3>
+                    <p>Cracked or shattered screen? We replace damaged screens with high quality part or genuine OEM. Same day service available.</p>
+                    <div class="quote-text"><i class="fa-solid fa-mobile-vibrate"></i> CALL FOR QUOTE</div>
+                </div>
+
+                <!-- Battery Replacement -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <h3>Battery Replacement</h3>
+                    <p>Phone not holding a charge? We install genuine replacement batteries to restore your device's battery life.</p>
+                    <div class="quote-text"><i class="fa-solid fa-mobile-vibrate"></i> CALL FOR QUOTE</div>
+                </div>
+
+                <!-- Water Damage -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-droplet"></i>
+                    </div>
+                    <h3>Water Damage Repair</h3>
+                    <p>Dropped your phone in water? Our specialized cleaning and repair process can save your device.</p>
+                    <div class="quote-text"><i class="fa-solid fa-mobile-vibrate"></i> CALL FOR QUOTE</div>
+                </div>
+
+                <!-- Charging Port -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Charging Port Repair</h3>
+                    <p>Phone won't charge? We repair or replace damaged charging ports to get your device powered up again.</p>
+                    <div class="quote-text"><i class="fa-solid fa-mobile-vibrate"></i> CALL FOR QUOTE</div>
+                </div>
+
+                <!-- Camera Repair -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Camera Repair</h3>
+                    <p>Blurry or broken camera? We replace front and back cameras to restore your phone's photography capabilities.</p>
+                    <div class="quote-text"><i class="fa-solid fa-mobile-vibrate"></i> CALL FOR QUOTE</div>
+                </div>
+
+                <!-- Speaker/Microphone -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-volume-high"></i>
+                    </div>
+                    <h3>Speaker & Microphone</h3>
+                    <p>Audio issues? We repair or replace speakers and microphones for clear sound quality.</p>
+                    <div class="quote-text"><i class="fa-solid fa-mobile-vibrate"></i> CALL FOR QUOTE</div>
+                </div>
+
+                <!-- Button Repair -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-circle-dot"></i>
+                    </div>
+                    <h3>Button Repair</h3>
+                    <p>Home button, power button, or volume buttons not working? We fix all button related issues.</p>
+                    <div class="quote-text"><i class="fa-solid fa-mobile-vibrate"></i> CALL FOR QUOTE</div>
+                </div>
+
+                <!-- Software Issues -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Software Troubleshooting</h3>
+                    <p>Phone frozen or running slow? We diagnose and fix software issues, perform updates, and optimize performance.</p>
+                    <div class="quote-text"><i class="fa-solid fa-mobile-vibrate"></i> CALL FOR QUOTE</div>
+                </div>
+
+                <!-- Data Recovery -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-drive"></i>
+                    </div>
+                    <h3>Data Recovery</h3>
+                    <p>Lost important data? Our data recovery services help retrieve photos, contacts, and files from damaged devices.</p>
+                    <div class="quote-text"><i class="fa-solid fa-mobile-vibrate"></i> CALL FOR QUOTE</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands-section">
+        <div class="container">
+            <h2 class="section-title">Brands We Repair</h2>
+            <div class="brands-grid">
+                <div class="brand-item"><i class="fab fa-apple"></i> Apple iPhone</div>
+                <div class="brand-item"><i class="fab fa-android"></i> Samsung</div>
+                <div class="brand-item"><i class="fab fa-google"></i> Google Pixel</div>
+                <div class="brand-item">LG</div>
+                <div class="brand-item">Motorola</div>
+                <div class="brand-item">Nokia</div>
+                <div class="brand-item">Sony</div>
+                <div class="brand-item">Huawei</div>
+                <div class="brand-item">Xiaomi</div>
+                <div class="brand-item">& Many More!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title">Ready to Fix Your Phone?</h2>
+            <p style="font-size: 1.2rem; color: #ffb3b3; margin-bottom: 30px;">Contact us today for a free diagnostic and quote!</p>
+            <a href="contact.html" class="cta-button">Get a Free Quote</a>
+            <p style="margin-top: 30px; color: #ff6666; font-size: 1.1rem;">
+                <i class="fas fa-phone"></i> Call/Text: <strong>904-557-0052</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 NinjaTechHQ. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="index.html" style="color: #ff6666; text-decoration: none; margin: 0 10px;">Home</a> |
+                <a href="services.html" style="color: #ff6666; text-decoration: none; margin: 0 10px;">Services</a> |
+                <a href="contact.html" style="color: #ff6666; text-decoration: none; margin: 0 10px;">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Announcement Bar Slider
+        let currentAnnouncement = 0;
+        const announcements = document.querySelectorAll('.announcement-item');
+        
+        function showNextAnnouncement() {
+            announcements[currentAnnouncement].classList.remove('active');
+            currentAnnouncement = (currentAnnouncement + 1) % announcements.length;
+            announcements[currentAnnouncement].classList.add('active');
+        }
+        
+        setInterval(showNextAnnouncement, 4000);
+    </script>
+</body>
+</html>

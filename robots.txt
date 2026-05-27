@@ -1,0 +1,19 @@
+# NinjaTechHQ Robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow private or unnecessary directories
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+
+# Allow search engines to crawl CSS and JS
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap location
+Sitemap: https://www.ninjatechhq.com/sitemap.xml
+
+# Crawl-delay (optional - prevents server overload)
+Crawl-delay: 1
